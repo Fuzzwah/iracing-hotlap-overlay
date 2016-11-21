@@ -9,7 +9,7 @@ import logging
 import irsdk
 import random
 import configobj
-import datetime import datetime
+from datetime import datetime
 
 def timeFromStr(string):
     try:
