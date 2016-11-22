@@ -1,6 +1,7 @@
 #!python3
 # -*- coding: utf-8 -*-
 
+import os
 import sys
 import shutil
 import re
@@ -357,13 +358,13 @@ if __name__ == '__main__':
 
     # check if config exists
     if not os.path.isfile(args.configfile):
-        config = configobj.ConfigObj()
+        config = configobj.ConfigObj(encoding="UTF8")
         config.filename = args.configfile
 
-        config['speed_units'] = "kph"
+        config['speed_units'] = 'kph'
         config['rpm_speed'] = {}
-        config['rpm_speed']['blocks'] = [" ", "\u258c", "\u2588"]
-        config['rpm_speed']['vertical_line'] = "\u2502"
+        config['rpm_speed']['blocks'] = [' ', '\u258c', '\u2588']
+        config['rpm_speed']['vertical_line'] = '\u2502'
         config.write()
         logging.info('Config created')
 
@@ -378,8 +379,8 @@ if __name__ == '__main__':
     patch_irsdk()
     ir = irsdk.IRSDK()
     ir.startup(test_file=args.test, dump_to=args.dump)
-#     if not ir.is_connected:
-#         sys.exit(0)
+    if not ir.is_connected:
+        sys.exit(0)
 
     if args.dump:
         sys.exit(0)
