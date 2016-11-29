@@ -1,8 +1,5 @@
-'''
-Created on 7 Feb 2014
-
-@author: Daniel
-'''
+#!python3
+# -*- coding: utf-8 -*-
 
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets

@@ -110,3 +110,4 @@ Traceback (most recent call last):
     for i in range(self._header.num_vars):
 AttributeError: 'NoneType' object has no attribute 'num_vars'
 2016-11-22 11:15:38     INFO: iRacing Hotlap Overlay 1.1.0
+2016-11-22 11:16:35     INFO: iRacing Hotlap Overlay 1.1.0
